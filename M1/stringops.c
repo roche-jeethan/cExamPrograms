@@ -4,13 +4,16 @@ void concat(char *, char *);
 int len(char *);
 void reverse(char *);
 void occurence(char *);
+void delete_substring(char *, const char *);
+void lower_to_upper(char *);
+void upper_to_lower(char *);
 int main(){
     char str1[100], str2[100];
     printf("Enter the two strings: ");
     scanf("%s %s",str1,str2);
     int choice;
     do{
-        printf("Choices:\n1. Compare\n2. Concatenate\n3. Length\n4. Reverse\n5. Occurences\n6. Exit\nEnter the choice: ");
+        printf("Choices:\n1. Compare\n2. Concatenate\n3. Length\n4. Reverse\n5. Occurences\n6. Delete Substring\n7. Lower to Upper\n8. Upper to Lower\n9. Exit\nEnter the choice: ");
         scanf("%d",&choice);
         switch(choice){
             case 1: compare(str1,str2); break;
@@ -18,10 +21,14 @@ int main(){
             case 3: printf("Length 1: %d\nLength 2: %d\n",len(str1),len(str2)); break;
             case 4: reverse(str1); break;
             case 5: occurence(str2); break;
-            case 6: break;
+            case 6: delete_substring(str1, str2);
+                    printf("String after deletion: %s\n", str1); break;
+            case 7: lower_to_upper(str1); break;
+            case 8: upper_to_lower(str1); break;
+            case 9: break;
             default: printf("Invalid option");
         }
-    } while(choice!=6);
+    } while(choice!=7);
     return 0;
 }
 void compare(char *str1, char *str2){
@@ -83,4 +90,44 @@ void occurence(char *str){
             printf("%c: %d\n",i,freq[i]);
         }
     }
+}
+void delete_substring(char *main_str, const char *sub_str) {
+    int i, j, k;
+    int main_len = len(main_str);
+    int sub_len = len(sub_str);
+    for (i = 0; i <= main_len - sub_len; i++) {
+        for (j = 0; j < sub_len; j++) {
+            if (main_str[i + j] != sub_str[j]) {
+                break;
+            }
+        }
+        if (j == sub_len) {
+            for (k = i; k <= main_len - sub_len; k++) {
+                main_str[k] = main_str[k + sub_len];
+            }
+            main_len -= sub_len;
+            main_str[main_len] = '\0';
+            i--;
+        }
+    }
+}
+void lower_to_upper(char *str){
+    int i=0;
+    while(str[i]!='\0'){
+        if(str[i]>='a' && str[i]<='z'){
+            str[i] = str[i] - 32;
+        }
+        i++;
+    }
+    printf("String in Upper Case: %s\n",str);
+}
+void upper_to_lower(char *str){
+    int i=0;
+    while(str[i]!='\0'){
+        if(str[i]>='A' && str[i]<='Z'){
+            str[i] = str[i] + 32;
+        }
+        i++;
+    }
+    printf("String in Lower Case: %s\n",str);
 }
