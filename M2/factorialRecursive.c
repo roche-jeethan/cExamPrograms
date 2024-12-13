@@ -1,3 +1,4 @@
+// factorial using recursion
 #include<stdio.h>
 int fact(int x);
 

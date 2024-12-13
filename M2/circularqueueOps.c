@@ -1,3 +1,5 @@
+//circular queue operations
+
 #include<stdio.h>
 #include<stdlib.h>
 #define SIZE 5

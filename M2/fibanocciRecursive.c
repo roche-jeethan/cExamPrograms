@@ -1,3 +1,4 @@
+// fibannocci using recursion
 #include<stdio.h>
 int fib(int x);
 int f=0,s=1;

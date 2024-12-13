@@ -1,9 +1,4 @@
-/*Explain recursion in your own words and write program for Factorial and gcd of two
-numbers using recursion Function
-
-Ans: Recursion is a concept of calling a function inside the function again and again, 
-till the requirement isnt satisfied. it acts as a while loop, but for user defined functions.
-Here is an example on factorial and gcd programs with recursion function.*/
+/*gcd programs with recursion function.*/
 #include <stdio.h>
 int factorial(int n)
 {

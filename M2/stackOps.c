@@ -1,3 +1,4 @@
+// stack operations
 #define max 5
 #include<stdio.h>
 #include<stdlib.h>
