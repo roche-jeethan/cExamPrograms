@@ -157,7 +157,7 @@ void display(){
         printf("%d ", cur->data);
         cur = cur->next;
     } while(cur != head);
-    printf("\n");
+    printf("NULL\n");
 }
 
 int main(){
