@@ -34,6 +34,7 @@ NODE insertend(NODE head, int coeff, int exp){
     cur->next = temp;
     return head;
 }
+
 void display(NODE head){
     if(head == NULL){
         printf("List is empty\n");
