@@ -14,8 +14,7 @@ void insertQ() {
         if (front == -1) {
             front = 0;
         }
-        rear++;
-        queue[rear] = item;
+        queue[++rear] = item;
     }
 }
 void deleteQ() {

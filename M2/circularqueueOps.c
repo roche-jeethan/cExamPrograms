@@ -17,7 +17,8 @@ void CQinsert() {
     }
     else {
         printf("Enter the element to be Inserted \n");
-        scanf(" %c", &CQ[r]); // Leave one extra space before %c count++;
+        scanf(" %c", &CQ[r]); // Leave one extra space before %c 
+        count++;
     }
 }
 void CQdelete() {
