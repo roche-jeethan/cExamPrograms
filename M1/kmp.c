@@ -44,16 +44,6 @@ void fail(char *pattern, int M, int *failure){
         } else {
             failure[j] = -1;
         }
-        printArray(failure,M);
     }
     
-}
-void printArray(int *arr,int n){
-    int i; int count=1;
-    for(i=0;i<n;i++){
-        printf("Count [%d]: Failure function: \n",count);
-        printf("%d\n",arr[i]);
-        count++;
-    }
-    printf("\n\n");
 }
